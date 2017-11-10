@@ -1,0 +1,14 @@
+{
+  "api.version": "v1",
+  "sources": [
+    {
+      "sourceType" : "LocalFile",
+      "name": "_SUMO_SOURCE_NAME_",
+      "pathExpression": "/tmp/clogs/**",
+      "multilineProcessingEnabled": false,
+      "automaticDateParsing": true,
+      "forceTimeZone": false,
+      "category": "_SUMO_SOURCE_CATEGORY_"
+    }
+	]
+}
