@@ -42,6 +42,10 @@ You must pass these config values via env variables:
 
 You can also check the Make commands as examples 
 
+### Log files locations
+
+For now, it will collect logs from the /tmp/clogs directory in the container. 
+Configuration for this path and possible docker volume mounting, will be added later.
 
 ### Build docker image
 
