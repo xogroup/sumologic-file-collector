@@ -40,12 +40,16 @@ You must pass these config values via env variables:
 |SUMO_SOURCE_CATEGORY         | Type of source (eg: file-log-collector)                             |
 
 
-You can also check the Make commands as examples 
+### Log files location
 
-### Log files locations
+The Collector expects log files to be placed on the `tmp/clogs` path (in the container). 
+It is recommended to mount a [docker volume](https://docs.docker.com/engine/admin/volumes/volumes/) to the `tmp/clogs` path 
+and share it with the logging app. 
 
-For now, it will collect logs from the /tmp/clogs directory in the container. 
-Configuration for this path and possible docker volume mounting, will be added later.
+
+## Pre-packaged commands
+
+We've included some commands for most common operations:
 
 ### Build docker image
 
@@ -56,11 +60,25 @@ make build
 ### Run collector on background
 
 ```bash
-make run namespace=babytechj application=qa-avatars-api sumo_access_key={your_key} sumo_access_secret={your_secret}
+make start namespace=babytechj application=qa-avatars-api sumo_access_key={your_key} sumo_access_secret={your_secret}
 ```
 
 ### Stop collector
 
 ```bash
 make kill
+```
+
+### Tag image
+
+```bash
+make tag
+```
+
+### Push to dockerhub
+
+(requires the `DOCKER_USERNAME` and `DOCKER_PASSWORD` env variables for logging in to dockerhub)
+
+```bash
+make push
 ```
