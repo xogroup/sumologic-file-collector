@@ -59,8 +59,10 @@ make build
 
 ### Run collector on background
 
+Runs the collector in background. Assumes that logging app has a docker volume mounted to log files path.  
+
 ```bash
-make start namespace=babytechj application=qa-avatars-api sumo_access_key={your_key} sumo_access_secret={your_secret}
+make start namespace=babytechj application=qa-avatars-api sumo_access_key={your_key} sumo_access_secret={your_secret} volumes_from={docker container with shared mounted volume}
 ```
 
 ### Stop collector
@@ -77,7 +79,7 @@ make tag
 
 ### Push to dockerhub
 
-(requires the `DOCKER_USERNAME` and `DOCKER_PASSWORD` env variables for logging in to dockerhub)
+(requires the `DOCKER_USERNAME` and `DOCKER_PASSWORD` env variables for authenticating in dockerhub)
 
 ```bash
 make push
