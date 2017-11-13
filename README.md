@@ -24,7 +24,7 @@ which will build the docker image `xogroup/sumologic-file-collector:latest`
 
 Run the image on a container, preferably on detached mode.
 
-see example under `./docker/scripts/run.sh`
+see example under [starts.sh](https://github.com/xogroup/sumologic-file-collector/blob/master/docker/scripts/start.sh)
 
 It will capture all changes to specified log files and push them to sumologic.
 
