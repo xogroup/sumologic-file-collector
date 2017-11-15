@@ -1,4 +1,4 @@
-tag=$(shell git rev-parse HEAD)
+tag=1.0.0
 repository:=xogroup/sumologic-file-collector
 tagged_image:=$(repository):$(tag)
 image_name:=$(repository):latest
