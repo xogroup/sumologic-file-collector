@@ -2,7 +2,7 @@
 # Version 0.1
 
 FROM ubuntu:14.04
-MAINTAINER Sumo Logic <docker@sumologic.com>
+MAINTAINER XO Group Inc.
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update --quiet && \
