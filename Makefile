@@ -1,6 +1,7 @@
 tag=1.0.0
 repository:=xogroup/sumologic-file-collector
 tagged_image:=$(repository):$(tag)
+tagged_image_latest:=$(repository):latest
 image_name:=$(repository):latest
 namespace?=''
 application?=''
@@ -14,9 +15,11 @@ build:
 
 tag:
 	IMAGE_NAME=$(image_name) TAGGED_IMAGE=$(tagged_image) ./docker/scripts/tag.sh
+	IMAGE_NAME=$(image_name) TAGGED_IMAGE=$(tagged_image_latest) ./docker/scripts/tag.sh
 
 push:
 	TAGGED_IMAGE=$(tagged_image) ./docker/scripts/push.sh
+	TAGGED_IMAGE=$(tagged_image_latest) ./docker/scripts/push.sh
 
 start:
 	VOLUMES_FROM=$(volumes_from) \
